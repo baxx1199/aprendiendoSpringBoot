@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section th:fragment="interceptor" >
+		<div class="row alert alert-success" th:if="${tt!= null}">
+			<div class="col-12 ">
+				<span th:text="'El tiempo transcurrido fue : '+${tt} + 'ms' "></span>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

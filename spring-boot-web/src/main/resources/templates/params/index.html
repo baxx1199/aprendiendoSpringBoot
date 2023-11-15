@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title th:text="'Enviando parametros'" ></title>
+	</head>
+	<body>
+		<h1>Vamos a enviar parametros a travez de la URL</h1>
+		<br>
+		<ul>
+			<li><a th:href="@{/params/string(text='yo soy baxx')}">baxx</a></li>
+			<li><a th:href="@{/params/string(text='yo soy groot')}">groot</a></li>
+			<li><a th:href="@{/params/mix-params(text='yo soy baxxy',num=11)}">Enviar parametro doble</a></li>
+			<li><a th:href="@{/params/mix-params-request(greeting='yo soy baxxy con servlet',num=11)}">Enviar parametro doble con servlet</a></li>
+
+		</ul>
+	</body>
+</html>

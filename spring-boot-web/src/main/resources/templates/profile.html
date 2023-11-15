@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title th:text="${titulo}"></title>
+</head>
+<body>
+		<h1 th:text="${titulo}"></h1>	
+		
+		<span th:text="${user.name}"></span>
+		<span th:text="${user.lastname} ? ${user.lastname} : 'not name'"></span>
+		<br>
+		
+		<span th:if="${user.email}" th:text="${user.email}"></span>
+		<span th:unless="${user.email}" th:text="'not email'"></span>
+</body>	
+</html>

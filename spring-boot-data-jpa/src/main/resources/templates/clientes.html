@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/layout :: head}">
+</head>
+<body>
+	<header th:replace="~{layouts/layout :: header}"></header>
+
+	<div class="row align-items-center bg-dark text-light ">
+		<div class="col-12 ">
+
+			<h1 class="text-center ">Listado de clientes</h1>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="row my-5">
+			<div class="col-12 text-center">
+
+				<table
+					class="table table-striped-columns table-hover table-bordered">
+					<thead class="table-dark">
+						<tr>
+							<th>id</th>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Puesto</th>
+							<th>fecha</th>
+							<th>Editar</th>
+							<th>Eliminar</th>
+						</tr>
+
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${listaClientes}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.name}"></td>
+							<td th:text="${cliente.lastname}"></td>
+							<td th:text="${cliente.job}"></td>
+							<td th:text="${cliente.createAt}"></td>
+							<td><a th:href="@{/form/} + ${cliente.id}" th:text="'Edit'"
+								class="btn btn-primary btn-xs"></a></td>
+							<td><a th:href="@{/eliminar/} + ${cliente.id}"
+								th:text="Delete" class="btn btn-danger btn-xs"
+								onclick="return confirm('se eliminara el cliente esta accion sera permanente ¿esta seguro?');"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<nav th:replace="~{layouts/paginator-nav :: paginator}"></nav>
+	</div>
+	
+	<footer th:replace="~{layouts/layout :: footer}">
+	</footer>
+
+</body>
+</html>

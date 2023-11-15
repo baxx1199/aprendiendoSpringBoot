@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title th:text="${title}"></title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous">
+</head>
+<body>
+	<header th:fragment="header">
+	
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-dark text-light border-bottom border-light ">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Spring boot app</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" th:href="@{/form}">Home</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/lista}">clientes</a>
+						</li>
+	
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+		<div class="alert alert-danger" th:if="${error != null}" th:text="${error}"></div>
+		<div class="alert alert-warning" th:if="${warning != null}" th:text="${warning}"></div>
+		<div class="alert alert-info" th:if="${info != null}" th:text="${info}"></div>
+		
+
+	</header>
+	<div class="container"></div>
+	
+	<footer th:fragment="footer" class="bg-dark text-light" style="width: 100%; padding: 30px 0px;" >
+		
+		<div class="row">
+			<div class="col-6 mx-auto" >
+				<p class="display3" style="text-align: center;">Powered By</p>
+				<div style="display: flex;justify-content: space-evenly;width: 100%;align-items: center;">
+					<img th:src="@{/images/Java_logo.png}" style="width:60px; height:90px;">
+					<img th:src="@{/images/spring-boot-logo.png}" style="width:40px; height:40px;">
+					<img th:src="@{/images/springIcon.png}" style="width:60px; height:60px;">
+				</div>
+			</div>
+			
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"></script>
+	</footer>
+</body>
+</html>

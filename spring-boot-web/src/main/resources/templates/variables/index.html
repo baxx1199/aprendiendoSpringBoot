@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title th:text="${titulo}"></title>
+	</head>
+	<body>
+		<h1 th:text="${titulo}"></h1>
+		<ul>
+			<li> <a th:href="@{/rutas/string/}+ 'enviamos solo un parametro'"> un solo parametro</a></li>
+			<li> <a th:href="@{/rutas/string/}+ ${titulo}+ '/' + ${'11'}"> Dos parametros</a></li>
+
+		</ul>
+	</body>
+</html>

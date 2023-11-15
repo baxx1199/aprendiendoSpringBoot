@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}"></title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
+</head>
+
+<body>
+	
+	<h1 th:text="${title}"></h1>
+	
+	<div>	
+		<h3 th:utext="${inv.description}"></h3>
+		
+		<div> Cliente: <span th:utext="${inv.client.name} + ' '+ ${inv.client.lastName}"></span> </div>
+		<h3>Detalles:</h3>
+		
+		
+		<div th:if="${inv.items.isEmpty()}">No hay productos guardados!</div>
+		<table th:unless="${inv.items.isEmpty()}">
+			<thead>
+				<tr>
+					<th>Producto</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr th:each="item: ${inv.items}">
+					<td th:text="${item.product.nameProduct}"></td>
+					<td th:text="${item.product.price}"></td>
+					<td th:text="${item.quantity}"></td>
+					<td th:text="${item.getTotalPrice()}"></td>
+				</tr>
+			</tbody>
+	</table>
+		
+	</div>
+</body>
+</html>

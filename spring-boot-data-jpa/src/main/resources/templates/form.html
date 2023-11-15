@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/layout :: head}">
+</head>
+<body>
+	<header th:replace="~{layouts/layout :: header}"></header>
+
+	<div class="row align-items-center bg-dark text-light ">
+		<div class="col-12 ">
+
+			<h1 class="text-center " th:text="${title}">Formulario de registro</h1>
+		</div>
+	</div>
+
+	<div class="container my-5">
+		<div class="row" th:object="${cliente}" th:remove="tag">
+		<ul th:if="${#fields.hasErrors('*')}" class="alert alert-warning">
+			<li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+		</ul>
+			
+		</div>
+
+		<div class="row my-5">
+			<div class="col-12 text-center">
+				<form th:action="@{/form}" th:object="${cliente}" method="post"
+					class="col-6 m-auto border border-3 border-dark gap-3 p-3 rounded-2 bg-secondary text-light" enctype="multipart/form-data">
+					<div>
+						<label for="txtName">Nombre</label> <input type="text"
+							id="txtName" th:field="*{name}" class="form-control" th:errorclass="'border border-danger'">
+					</div>
+					<div th:if="${#fields.hasErrors('name') }"
+							th:errors="*{name}" class="form-text text-danger my-1"></div>
+						
+					
+					<div>
+						<label for="txtLastname">apellido</label> <input type="text"
+							id="txtLastname" th:field="*{lastname}" class="form-control" th:errorclass="'border border-danger'">
+					</div>
+					<div th:if="${#fields.hasErrors('lastname') }"
+							th:errors="*{lastname}" class="form-text text-danger my-1"></div>
+						
+					<div>
+						<label for="txtJob">Puesto</label> <input type="text" id="txtJob"
+							th:field="*{job}" class="form-control" th:errorclass="'border border-danger'">
+					</div>
+					<div th:if="${#fields.hasErrors('job') }"
+							th:errors="*{job}" class="form-text text-danger my-1"></div>
+							
+					<div>
+						<label for="txtDate">Fecha</label> <input type="date" id="txtDate" 
+						th:field="*{createAt}" class="form-control" th:errorclass="'border border-danger'"/>
+					</div>
+					<div th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}" class="form-text text-danger my-1"></div>
+						
+						
+					<div>
+						<label for="profilePhotoIn">Foto de perfil</label>
+						<input type="file" name="profilePhotoIn" class="form-control">
+					</div>	
+					<!-- <input type="hidden" th:field="*{id}"> -->
+
+					<div class="row my-5">
+						<div class="col d-flex justify-content-center">
+
+							<input type="submit" value="enviar"
+								class="col-6 btn btn-dark border-3 border-light">
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="~{layouts/layout :: footer}"></footer>
+</body>
+</html>

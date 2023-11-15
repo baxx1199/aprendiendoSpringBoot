@@ -1,0 +1,24 @@
+*{
+	font-family: 'Courier New', Courier, monospace;
+}
+body{
+	width: 100%;
+}
+.tt1{
+	color:orange;
+	font-size: 45px;
+	text-align: center;
+}
+.tt3{
+	color:white;
+	font-size: 22px;
+	font-weight: bold;
+	
+	width: 100%;
+	height: 70px;
+	background: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
