@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;spring-boot-web&apos;" deleteContents="true" description="Delete resource &apos;spring-boot-web&apos;" element1="/spring-boot-web" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1675738138835"/>&#x0A;<refactoring comment="Delete resource &apos;spring-boot-web-comprobacion&apos;" deleteContents="true" description="Delete resource &apos;spring-boot-web-comprobacion&apos;" element1="/spring-boot-web-comprobacion" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1675889933410"/>
-</session>

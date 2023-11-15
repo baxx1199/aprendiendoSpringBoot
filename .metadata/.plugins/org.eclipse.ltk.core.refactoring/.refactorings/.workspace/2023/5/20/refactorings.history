@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;spring-boot-Horario&apos;" deleteContents="true" description="Delete resource &apos;spring-boot-Horario&apos;" element1="/spring-boot-Horario" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1684284160233"/>&#x0A;<refactoring comment="Delete resource &apos;spring-boot-Horario&apos;" deleteContents="false" description="Delete resource &apos;spring-boot-Horario&apos;" element1="/spring-boot-Horario" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1684286341252"/>
-</session>
